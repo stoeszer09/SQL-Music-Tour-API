@@ -13,12 +13,10 @@ app.use(express.urlencoded({ extended: false }))
 
 let sequelize = new Sequelize({  
     username: "postgres",
-    password: process.env.password,
+    password: process.env.PASSWORD,
     host: "127.0.0.1",
-    dialect: "postgres"})
-
-// const sequelize = new Sequelize(process.env.PG_URI)
-
+    dialect: "postgres"
+})
 
 try {
     sequelize.authenticate() 
