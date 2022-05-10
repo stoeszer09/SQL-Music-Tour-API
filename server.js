@@ -11,21 +11,6 @@ app.use(express.urlencoded({ extended: false }))
 
 // SEQUELIZE CONNECTION
 
-let sequelize = new Sequelize({  
-    username: "postgres",
-    password: process.env.PASSWORD,
-    host: "127.0.0.1",
-    dialect: "postgres"
-})
-
-try {
-    sequelize.authenticate() 
-    console.log(`Connected with Sequelize at ${process.env.PG_URI}`) 
-} catch(err) {
-    console.log(`Unable to connect to PG: ${err}`) 
-}
-
-
 // ROOT
 app.get('/', (req, res) => {
     res.status(200).json({
